@@ -1,1 +1,3 @@
 mcenv
+.venv
+*.pt
