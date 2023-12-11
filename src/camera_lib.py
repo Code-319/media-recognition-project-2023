@@ -2,12 +2,21 @@ import cv2
 import numpy as np
 from constants import *
 
-def camera_init():
-    cam = cv2.VideoCapture(1)
-    
+class Camera:
+    def __init__(self, camera_id = 1):
+        self.cam = cv2.VideoCapture(camera_id)
+        self.cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+        self.cam.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
 
-def capture1920x1080():
-    pass
+    def capture1920x1080(self):
+        ret, frame = self.cam.read()
+        if ret:
+            return frame
+        else:
+            print("ERROR: capture failed")
+
+    def release(self):
+        self.cam.release()
 
 def cut_image(img):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
