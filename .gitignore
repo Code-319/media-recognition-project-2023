@@ -1,3 +1,7 @@
 mcenv
 .venv
 *.pt
+runs
+*.jpg
+__pycache__
+*.pyc
