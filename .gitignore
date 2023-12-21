@@ -5,3 +5,5 @@ runs
 *.jpg
 __pycache__
 *.pyc
+private*
+*.png

@@ -14,7 +14,7 @@ def move(from_x, from_y, bin_Number):
     # x : 135(back) ~ 230(front)
     # y : -74(right) ~ 62(left) 
 
-    x0 = int(-(from_y*134/600-5)*(230-135)/114)+230
+    x0 = int(-(from_y*134/600)*(230-135)/114)+230
     y0 = int(-(from_x*134/600-10)*(74+62)/114)+62
 
 
