@@ -1,6 +1,6 @@
 import RobarmControl
 
-def move(from_x, from_y, to_x, to_y):
+def move(from_x, from_y, bin_Number):
     # 图片 600 * 600 像素
     # 实际 物块 4*4; 区域 15*15 
     # 拍摄图片 134 * 134 mm^2; 区域 114*114 mm^2
@@ -16,22 +16,33 @@ def move(from_x, from_y, to_x, to_y):
 
     x0 = int(-(from_y*134/600-5)*(230-135)/114)+230
     y0 = int(-(from_x*134/600-10)*(74+62)/114)+62
-    x1 = to_x
-    y1 = to_y
+
 
     POS_FROM = [[x0, y0, 230, -180, 0, 0],
                 [x0, y0, 100, -180, 0, 0]]
 
-    POS_TO   = [[x1, y1, 240, -180, 0, 0],
-                [x1, y1, 175, -180, 0, 0]]
-    
+    RobarmControl.pump_on()
     RobarmControl.init()
     RobarmControl.grasp(POS_FROM[0], POS_FROM[1])
-    RobarmControl.put_off(POS_TO[0], POS_TO[1])
+
+    if bin_Number == 0:
+        RobarmControl.put_left_front()
+    elif bin_Number == 1:
+        RobarmControl.put_left_back()
+    elif bin_Number == 2:
+        RobarmControl.put_right_front()
+    elif bin_Number == 3:
+        RobarmControl.put_right_back() 
+
     RobarmControl.init()
 
-if __name__ == "main":
-    move(600, 0, 120, 170)
+if __name__ == "__main__":
+    move(500, 100, 1)
+
+
+
+
+
 
 
 
