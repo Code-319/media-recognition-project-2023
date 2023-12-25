@@ -37,7 +37,7 @@ def move(from_x, from_y, bin_Number):
     RobarmControl.init()
 
 if __name__ == "__main__":
-    move(500, 100, 1)
+    move(500, 100, 3)
 
 
 
