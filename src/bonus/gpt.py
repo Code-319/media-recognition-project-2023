@@ -1,5 +1,5 @@
 import requests
-from private_token import OPENAI_API_KEY
+from .private_token import OPENAI_API_KEY
 
 headers = {
     "Authorization": f"Bearer {OPENAI_API_KEY}"

@@ -19,6 +19,18 @@ class Camera:
         self.cam.release()
 
 def cut_image(img):
+    """
+    Cuts an image based on the detected ArUco marker.
+
+    Args:
+        img (numpy.ndarray): The input image.
+
+    Returns:
+        numpy.ndarray: The cut image.
+
+    Raises:
+        None
+    """
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     if gray.shape != (1920, 1080):
